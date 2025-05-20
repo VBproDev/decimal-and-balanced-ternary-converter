@@ -1,0 +1,148 @@
+$select-border-color: #86b7fe;
+$bg-color: #f8f9fa;
+$text-color: #2C2C2C;
+$border-radius: 0.5rem;
+$box-shadow: $text-color 0 1px 0;
+$green-color: #207235;
+
+%base-styles {
+  box-sizing: border-box;
+  appearance: none;
+  border-radius: $border-radius;
+}
+
+%base-input-styles {
+  @extend %base-styles;
+  width: 8rem;
+  margin: 1rem;
+  line-height: 1.5rem;
+}
+
+%base-input-text-styles {
+  @extend %base-input-styles;
+  font-weight: 400;
+  background-color: $bg-color;
+  border: 1px solid #ced4da;
+  border-radius: 0.5rem;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+@mixin banner-styles($banner-color) {
+  @extend %base-styles;
+  display: initial;
+  position: fixed;
+  top: clamp(0.2rem, 1%, 3rem);
+  z-index: 2;
+  opacity: 0.85;
+  width: clamp(15rem, 60%, 25rem);
+  background-color: $banner-color;
+  color: $bg-color;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: $box-shadow;
+}
+
+.numeric-input {
+  @extend %base-input-text-styles;
+
+  :focus {
+    color: #212529;
+    border-color: $select-border-color;
+    outline: none;
+    box-shadow: $box-shadow;
+  }
+}
+
+.numeric-base-select {
+  @extend %base-input-text-styles;
+  padding-right: 2rem;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M0 3l5 5 5-5z' fill='%23212529'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1rem;
+
+  :focus {
+    border-color: $select-border-color;
+    outline: none;
+    box-shadow: $box-shadow;
+  }
+}
+
+.convert-btn {
+  @extend %base-input-styles;
+  font-weight: 500;
+  background-color: $green-color;
+  border: 1px solid rgba(27, 31, 35, .15);
+  box-shadow: $box-shadow;
+  color: $bg-color;
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  white-space: nowrap;
+}
+
+.conversion-container {
+  @extend %base-styles;
+  width: clamp(10rem, 90%, 30rem);
+  background-color: $text-color;
+  height: 15rem;
+  margin: 1rem;
+}
+
+.conversion-result {
+  @extend %base-styles;
+  color: $bg-color;
+  width: 100%;
+  height: calc(100% - 2rem);
+  border: none;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+}
+
+.copy-result {
+  background-color: $select-border-color;
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+  color: $text-color;
+  height: 2rem;
+  width: 100%;
+}
+
+.copy-icon-container {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #ced4da;
+  width: 2rem;
+  height: 2rem;
+}
+
+.banner-container {
+  display: flex;
+  justify-content: center;
+}
+
+.active-error {
+  @include banner-styles(#B03131);
+}
+
+.active-success {
+  @include banner-styles($green-color);
+}
+
+html {
+  background-color: $bg-color;
+  font-size: clamp(0.8rem, 1.2rem, 2rem);
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: $text-color;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 1rem;
+}
