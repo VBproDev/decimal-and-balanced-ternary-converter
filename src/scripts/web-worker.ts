@@ -5,15 +5,21 @@ self.onmessage = (e: MessageEvent) => {
 
   let decimalNums: number[] = [];
 
-  for (let i = Number(range[0]); i <= Number(range[1]); i++) {
-    decimalNums.push(i);
-  }
-
   if (numSys === "balanced-ternary") {
+
+    for (let i = Number(range[0]); i <= Number(range[1]); i++) {
+      decimalNums.push(i);
+    }
+
     self.postMessage(decimalNums.map((num) => decimalToBalancedTernary(num)));
   }
-  
+
   else {
+    
+    for (let i = balancedTernaryToDecimal(range[0]); i <= balancedTernaryToDecimal(range[1]); i++) {
+      decimalNums.push(i);
+    }
+
     self.postMessage(decimalNums);
   }
 
