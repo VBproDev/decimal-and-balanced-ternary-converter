@@ -1,5 +1,3 @@
-name: Balanced ternary to decimal pipeline
-
 on:
   push:
     branches: [ main, master ]
@@ -38,25 +36,27 @@ jobs:
     needs: build
     if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
           cache: 'npm'
-      
+
       - name: Restore cached build
         uses: actions/cache@v3
         with:
           path: dist
           key: ${{ runner.os }}-astro-build-${{ github.sha }}
-      
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist
           branch: gh-pages
+          folder: dist
+          clean: true
+          token: ${{ secrets.GITHUB_TOKEN }}
