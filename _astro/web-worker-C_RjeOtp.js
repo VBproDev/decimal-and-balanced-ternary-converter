@@ -1,1 +1,0 @@
-function f(e){if(e===0)return"0";let s="";for(;e!==0;)(e%3+3)%3===0?s="0"+s:(e%3+3)%3===1?(s="1"+s,e-=1):(s="T"+s,e+=1),e=Math.floor(e/3);return s}self.onmessage=e=>{const{range:s,numSys:n}=e.data;let t=[];for(let r=Number(s[0]);r<=Number(s[1]);r++)t.push(r);n==="balanced-ternary"?self.postMessage(t.map(r=>f(r))):self.postMessage(t)};
