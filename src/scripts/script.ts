@@ -8,8 +8,9 @@ const base = document.querySelector(".numeric-base-select")!;
 const outputArea = document.querySelector(".conversion-result")!;
 const errorBanner = document.getElementById("error-banner")!;
 const convertBtn = document.querySelector(".convert-btn")!;
-const copyBtn = document.querySelector(".copy-icon-container")!;
+const copyBtn = document.querySelector(".copy-btn")!;
 const successBanner = document.getElementById("success-banner")!;
+const downloadBtn = document.querySelector(".download-btn")!;
 
 function setLoadingUI() {
   successBanner.setAttribute("aria-live", "polite");
@@ -63,7 +64,7 @@ async function convertBtnHandler() {
     if (/\d+,\d+/.test(n)) {
       const range = n.split(',').map(x => Number(x)).sort((a, b) => a - b);
 
-      if (range[1] - range[0] > 500000) {
+      if (range[1] - range[0] > 150000) {
 
         setLoadingUI();
 
@@ -129,6 +130,17 @@ function copyResults() {
   successHandling("Copied to clipboard!");
 }
 
+function downloadResults() {
+  const url = URL.createObjectURL(new Blob([outputArea.innerHTML], { type: "text/plain" }));
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = 'results.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url)
+}
+
 convertBtn.addEventListener("click", () => convertBtnHandler());
 convertBtn.addEventListener("keydown", (event) => {
 
@@ -138,8 +150,20 @@ convertBtn.addEventListener("keydown", (event) => {
 
 });
 
-copyBtn.addEventListener("click", copyResults);
+copyBtn.addEventListener("click", () => {
+
+  if (outputArea.innerHTML.length > 500000) {
+    raiseError("Output this large can only be downloaded!", `Output is ${outputArea.innerHTML.length} characters long. The program has identified the output as too large to be copied to the clipboard.`);
+  }
+  
+  copyResults();
+});
+
 copyBtn.addEventListener("keydown", (event: Event) => {
+
+  if (outputArea.innerHTML.length > 500000) {
+    raiseError("Output this large can only be downloaded!", `Output is ${outputArea.innerHTML.length} characters long. The program has identified the output as too large to be copied to the clipboard.`);
+  }
 
   if ((event as KeyboardEvent).key === 'Enter' || (event as KeyboardEvent).key === ' ') {
     copyResults();
@@ -150,4 +174,14 @@ copyBtn.addEventListener("keydown", (event: Event) => {
 base.addEventListener("change", (e) => {
   if ((base as HTMLInputElement).value.toLowerCase() === "balanced-ternary") num.placeholder = "Enter decimal";
   else num.placeholder = "Enter balanced ternary";
+});
+
+downloadBtn.addEventListener("click", downloadResults)
+
+downloadBtn.addEventListener("keydown", (event: Event) => {
+
+  if ((event as KeyboardEvent).key === 'Enter' || (event as KeyboardEvent).key === ' ') {
+    downloadResults();
+  }
+
 });

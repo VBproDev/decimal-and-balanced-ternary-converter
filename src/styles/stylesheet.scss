@@ -4,6 +4,7 @@ $text-color: #2C2C2C;
 $border-radius: 0.5rem;
 $box-shadow: $text-color 0 1px 0;
 $green-color: #207235;
+$margin: clamp(2%, 1rem, 3%);
 
 %base-styles {
   box-sizing: border-box;
@@ -14,7 +15,7 @@ $green-color: #207235;
 %base-input-styles {
   @extend %base-styles;
   width: 8rem;
-  margin: 1rem;
+  margin: $margin;
   line-height: 1.5rem;
 }
 
@@ -87,7 +88,7 @@ $green-color: #207235;
   width: clamp(10rem, 90%, 30rem);
   background-color: $text-color;
   height: 15rem;
-  margin: 1rem;
+  margin: $margin;
 }
 
 .conversion-result {
@@ -117,7 +118,7 @@ $green-color: #207235;
   align-items: center;
   text-align: center;
   background-color: #ced4da;
-  width: 2rem;
+  width: 4rem;
   height: 2rem;
 }
 
