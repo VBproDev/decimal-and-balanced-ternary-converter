@@ -1,0 +1,1 @@
+(function(){"use strict";function n(e){if(e===0)return"0";let s="";for(;e!==0;)(e%3+3)%3===0?s="0"+s:(e%3+3)%3===1?(s="1"+s,e-=1):(s="T"+s,e+=1),e=Math.floor(e/3);return s}self.onmessage=e=>{const{range:s,numSys:f}=e.data;let r=[];for(let t=Number(s[0]);t<=Number(s[1]);t++)r.push(t);f==="balanced-ternary"?self.postMessage(r.map(t=>n(t))):self.postMessage(r)}})();
