@@ -1,6 +1,6 @@
 import { decimalToBalancedTernary, balancedTernaryToDecimal } from "./utils";
 
-const webWorker = new Worker(new URL('./web-worker.ts', import.meta.url));
+const webWorker = new Worker(new URL('./web-worker.ts'));
 const num = document.querySelector(".numeric-input") as HTMLInputElement;
 const base = document.querySelector(".numeric-base-select")!;
 const outputArea = document.querySelector(".conversion-result")!;
