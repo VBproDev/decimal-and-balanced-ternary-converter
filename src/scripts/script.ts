@@ -1,7 +1,6 @@
 import { decimalToBalancedTernary, balancedTernaryToDecimal } from "./utils";
-import WorkerURL from '_astro/web-worker?worker&url';
 
-const webWorker = new Worker(WorkerURL, { type: 'module' });
+const webWorker = new Worker(new URL('web-worker.ts', import.meta.url));
 const num = document.querySelector(".numeric-input") as HTMLInputElement;
 const base = document.querySelector(".numeric-base-select")!;
 const outputArea = document.querySelector(".conversion-result")!;
