@@ -1,7 +1,6 @@
 import { decimalToBalancedTernary, balancedTernaryToDecimal } from "./utils";
-import Worker from './web-worker.ts?worker'
 
-const webWorker = new Worker();
+const webWorker = new Worker(new URL('./web-worker.ts', import.meta.url));
 const num = document.querySelector(".numeric-input") as HTMLInputElement;
 const base = document.querySelector(".numeric-base-select")!;
 const outputArea = document.querySelector(".conversion-result")!;
@@ -22,6 +21,7 @@ function cleanLoadingUI() {
   successBanner.classList.remove("active-success");
   successBanner.classList.add("disabled-banner");
   successBanner.removeAttribute("aria-live");
+  successBanner.innerText = '';
 }
 
 function raiseError(userMsg: string, logMsg: string) {
@@ -34,6 +34,7 @@ function raiseError(userMsg: string, logMsg: string) {
     errorBanner.classList.remove("active-error");
     errorBanner.classList.add("disabled-banner");
     errorBanner.removeAttribute("aria-live");
+    errorBanner.innerText = '';
   }, 2000);
 
   throw new Error(logMsg);
@@ -50,6 +51,7 @@ async function successHandling(userMsg: string): Promise<void> {
   successBanner.classList.remove("active-success");
   successBanner.classList.add("disabled-banner");
   successBanner.removeAttribute("aria-live");
+  successBanner.innerText = '';
 }
 
 async function convertBtnHandler() {
