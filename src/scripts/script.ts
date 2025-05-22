@@ -1,5 +1,5 @@
 import { decimalToBalancedTernary, balancedTernaryToDecimal } from "./utils";
-import WorkerURL from './web-worker?worker&url';
+import WorkerURL from '_astro/web-worker?worker&url';
 
 const webWorker = new Worker(WorkerURL, { type: 'module' });
 const num = document.querySelector(".numeric-input") as HTMLInputElement;
