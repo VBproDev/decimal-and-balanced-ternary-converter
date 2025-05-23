@@ -1,6 +1,7 @@
-import { decimalToBalancedTernary, balancedTernaryToDecimal } from "./utils";
-
-const webWorker = new Worker('/decimal-and-balanced-ternary-converter/web-worker.js');
+import { balancedTernaryToDecimal, decimalToBalancedTernary } from "./utils";
+import WebWorker from './web-worker?worker';
+  
+const webWorker = new WebWorker();
 const num = document.querySelector(".numeric-input") as HTMLInputElement;
 const base = document.querySelector(".numeric-base-select")!;
 const outputArea = document.querySelector(".conversion-result")!;
@@ -156,7 +157,7 @@ copyBtn.addEventListener("click", () => {
   if (outputArea.innerHTML.length > 500000) {
     raiseError("Output this large can only be downloaded!", `Output is ${outputArea.innerHTML.length} characters long. The program has identified the output as too large to be copied to the clipboard.`);
   }
-  
+
   copyResults();
 });
 
