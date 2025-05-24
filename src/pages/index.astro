@@ -1,152 +1,150 @@
 ---
 import "../styles/stylesheet.scss";
-console.log(import.meta.url);
 ---
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="application-name"
-    content="Decimal to Balanced Ternary Converter"
-  />
-  <meta
-    name="description"
-    content="An online tool to convert between decimal numbers and balanced ternary."
-  />
-  <meta
-    name="keywords"
-    content="balanced ternary, converter, base 10, base 3, decimal, calculate, convert"
-  />
-  <meta name="author" content="Viraj Bijpuria" />
-  <meta name="robots" content="index, follow" />
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="application-name"
+      content="Decimal to Balanced Ternary Converter"
+    />
+    <meta
+      name="description"
+      content="An online tool to convert between decimal numbers and balanced ternary."
+    />
+    <meta
+      name="keywords"
+      content="balanced ternary, converter, base 10, base 3, decimal, calculate, convert"
+    />
+    <meta name="author" content="Viraj Bijpuria" />
+    <meta name="robots" content="index, follow" />
 
-  <meta charset="UTF-8" />
-  <meta
-    name="google-site-verification"
-    content="2nZEIGfRoHGC-BS3L-BIv6bkhVUZDpoGNgUK9Z4Pub8"
-  />
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Decimal to Balanced Ternary Converter" />
-  <meta
-    property="og:description"
-    content="Convert decimal numbers to balanced ternary easily with this free online calculator."
-  />
-  <meta
-    property="og:url"
-    content="https://github.com/VBproDev/decimal-to-balanced-ternary-converter"
-  />
-  <meta
-    property="og:site_name"
-    content="Decimal to Balanced Ternary Converter"
-  />
-  <meta property="og:image" content="./favicon.png" />
-  <link rel="icon" href="./favicon.png" />
-  <title>Convert decimal to balanced ternary and back</title>
-</head>
+    <meta charset="UTF-8" />
+    <meta
+      name="google-site-verification"
+      content="2nZEIGfRoHGC-BS3L-BIv6bkhVUZDpoGNgUK9Z4Pub8"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Decimal to Balanced Ternary Converter" />
+    <meta
+      property="og:description"
+      content="Convert decimal numbers to balanced ternary easily with this free online calculator."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/VBproDev/decimal-to-balanced-ternary-converter"
+    />
+    <meta
+      property="og:site_name"
+      content="Decimal to Balanced Ternary Converter"
+    />
+    <meta property="og:image" content="./favicon.png" />
+    <link rel="icon" href="./favicon.png" />
+    <title>Convert decimal to balanced ternary and back</title>
+  </head>
 
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Decimal to Balanced Ternary Converter",
-    "url": "https://github.com/VBproDev/decimal-to-balanced-ternary-converter",
-    "applicationCategory": "CalculatorApplication",
-    "operatingSystem": "All",
-    "browserRequirements": "Requires JavaScript and modern browser",
-    "description": "An online tool to convert between decimal numbers and balanced ternary",
-    "keywords": [
-      "balanced ternary",
-      "converter",
-      "base 10",
-      "base 3",
-      "decimal",
-      "calculate",
-      "convert"
-    ],
-    "creator": {
-      "@type": "Person",
-      "name": "Viraj Bijpuria",
-      "url": "https://github.com/VBproDev"
-    },
-    "inLanguage": "en",
-    "license": "https://www.gnu.org/licenses/agpl-3.0.en.html",
-    "isAccessibleForFree": true
-  }
-</script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Decimal to Balanced Ternary Converter",
+      "url": "https://github.com/VBproDev/decimal-to-balanced-ternary-converter",
+      "applicationCategory": "CalculatorApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript and modern browser",
+      "description": "An online tool to convert between decimal numbers and balanced ternary",
+      "keywords": [
+        "balanced ternary",
+        "converter",
+        "base 10",
+        "base 3",
+        "decimal",
+        "calculate",
+        "convert"
+      ],
+      "creator": {
+        "@type": "Person",
+        "name": "Viraj Bijpuria",
+        "url": "https://github.com/VBproDev"
+      },
+      "inLanguage": "en",
+      "license": "https://www.gnu.org/licenses/agpl-3.0.en.html",
+      "isAccessibleForFree": true
+    }
+  </script>
 
-<h1>Convert between balanced ternary and decimal</h1>
-<p>
-  If you're here, you likely already know what <a
-    target="_blank"
-    href="https://en.wikipedia.org/wiki/Balanced_ternary">Balanced ternary</a
-  > is, so we won't redefine it here.
-</p>
-
-<p>
-  To convert a single number, simply enter it into the input field. For bulk
-  conversions, you can specify a range using the format <code>n₁, n₂</code> (e.g.,
-  <code>1, 100</code> or <code>T10, 1T11</code>).
-</p>
-
-<p>
-  When entering balanced ternary numbers, remember that the digit -1 and 1 is
-  represented by <code>T</code> and <code>1</code>.
-</p>
-
-<input
-  id="numeric-input"
-  aria-label="Enter decimal"
-  class="numeric-input"
-  placeholder="Enter decimal"
-/>
-
-<label for="numeric-base-select">Convert to</label>
-<select id="numeric-base-select" class="numeric-base-select" name="base">
-  <option value="balanced-ternary">Balanced Ternary</option>
-  <option value="decimal">Decimal</option>
-</select>
-
-<button class="convert-btn">Convert</button>
-
-<br />
-
-<div class="conversion-container">
-  <div class="copy-result">
-    <div class="copy-icon-container">
-      <h2 class="copy-btn" role="button" tabindex="0" aria-label="Copy results">
-        📋
-      </h2>
-      <h2
-        class="download-btn"
-        role="button"
-        tabindex="0"
-        aria-label="Downloadresults"
-      >
-        ⬇️
-      </h2>
-    </div>
-  </div>
-  <textarea readonly tabindex="-1" class="conversion-result"></textarea>
-</div>
-
-<script src="../scripts/script.ts"></script>
-<footer>
-  Consider starring ⭐ us on <a
-    target="_blank"
-    href="https://github.com/VBproDev/decimal-and-balanced-ternary-converter"
-    >Github!</a
-  >
+  <h1>Convert between balanced ternary and decimal</h1>
   <p>
-    Made by <a target="_blank" href="https://github.com/VBproDev"
-      >Viraj Bijpuria</a
-    >
+    If you're here, you likely already know what <a
+      target="_blank"
+      href="https://en.wikipedia.org/wiki/Balanced_ternary">Balanced ternary</a
+    > is, so we won't redefine it here.
   </p>
-</footer>
-<div class="banner-container">
-  <h4 id="error-banner" class="disabled-banner"></h4>
-</div>
 
-<div class="banner-container">
-  <h4 id="success-banner" class="disabled-banner"></h4>
-</div>
+  <p>
+    To convert a single number, simply enter it into the input field. For bulk
+    conversions, you can specify a range using the format <code>n₁, n₂</code> (e.g.,
+    <code>1, 100</code> or <code>T10, 1T11</code>).
+  </p>
+
+  <p>
+    When entering balanced ternary numbers, remember that the digit -1 and 1 is
+    represented by <code>T</code> and <code>1</code>.
+  </p>
+
+  <input
+    id="numeric-input"
+    aria-label="Enter decimal"
+    class="numeric-input"
+    placeholder="Enter decimal"
+  />
+
+  <label for="numeric-base-select">Convert to</label>
+  <select id="numeric-base-select" class="numeric-base-select" name="base">
+    <option value="balanced-ternary">Balanced Ternary</option>
+    <option value="decimal">Decimal</option>
+  </select>
+
+  <button class="convert-btn">Convert</button>
+
+  <br />
+
+  <div class="conversion-container">
+    <div class="copy-result">
+      <div class="copy-icon-container">
+        <button class="copy-btn" role="button" aria-label="Copy results">
+          📋
+        </button>
+        <button class="download-btn" role="button" aria-label="Downloadresults">
+          ⬇️
+        </button>
+      </div>
+    </div>
+    <textarea readonly tabindex="-1" class="conversion-result"></textarea>
+  </div>
+
+  <script src="../scripts/script.ts"></script>
+  <footer>
+    Consider starring ⭐ us on <a
+      target="_blank"
+      href="https://github.com/VBproDev/decimal-and-balanced-ternary-converter"
+      >Github!</a
+    >
+    <p>
+      Made by <a target="_blank" href="https://github.com/VBproDev"
+        >Viraj Bijpuria</a
+      >
+    </p>
+  </footer>
+  <div class="banner-container">
+    <h4 id="error-banner" class="disabled-banner"></h4>
+  </div>
+
+  <div class="banner-container">
+    <h4 id="success-banner" class="disabled-banner"></h4>
+  </div>
+
+
+</html>

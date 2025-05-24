@@ -27,9 +27,6 @@ jobs:
       - name: Build Astro project
         run: npm run build
 
-      - name: Create .nojekyll file
-        run: touch dist/.nojekyll
-
       - name: Cache build output
         uses: actions/cache@v3
         with:

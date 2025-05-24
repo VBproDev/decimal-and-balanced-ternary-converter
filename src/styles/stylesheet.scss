@@ -28,6 +28,10 @@ $margin: clamp(2%, 1rem, 3%);
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
+%btn-styles {
+  font-weight: 500;
+}
+
 @mixin banner-styles($banner-color) {
   @extend %base-styles;
   display: initial;
@@ -71,12 +75,11 @@ $margin: clamp(2%, 1rem, 3%);
 
 .convert-btn {
   @extend %base-input-styles;
-  font-weight: 500;
+  @extend %btn-styles;
   background-color: $green-color;
   border: 1px solid rgba(27, 31, 35, .15);
   box-shadow: $box-shadow;
   color: $bg-color;
-  cursor: pointer;
   text-align: center;
   user-select: none;
   -webkit-user-select: none;
@@ -112,7 +115,6 @@ $margin: clamp(2%, 1rem, 3%);
 }
 
 .copy-icon-container {
-  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -146,4 +148,13 @@ footer {
   text-align: center;
   font-size: 0.8rem;
   line-height: 1rem;
+}
+
+.copy-btn, .download-btn {
+  @extend %btn-styles;
+  all: unset;
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 2rem;
+  height: 100%;
 }
