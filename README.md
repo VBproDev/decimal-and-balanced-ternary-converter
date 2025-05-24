@@ -6,7 +6,7 @@ Convert between Decimal and Balanced Ternary numbers — instantly and at scale.
 
 ## 🌐 Live Demo
 
-👉 [Use the tool in your browser](https://github.com/VBproDev/decimal-to-balanced-ternary-converter)
+👉 [Use the tool in your browser](https://vbprodev.github.io/decimal-and-balanced-ternary-converter/)
 
 ---
 
@@ -18,7 +18,9 @@ Convert between Decimal and Balanced Ternary numbers — instantly and at scale.
 - 📋 Clipboard support for small outputs.
 - 📄 Automatic .txt file download for large outputs (over 100,000 numbers).
 - 📱 Responsive layout with accessibility-first design.
-- ✅ Tested with bulk conversion of up to 21 million numbers. The tool may handle more numbers, you can help by testing the limits
+- ✅ Tested with bulk conversion of up to 21 million numbers.
+  
+The tool may handle even more — feel free to push its limits and let us know how it goes!
 
 ---
 
