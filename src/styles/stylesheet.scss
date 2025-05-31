@@ -183,9 +183,9 @@ body {
 }
 
 .numeric-base-select {
-  appearance: none; /* Remove default styling */
-  -webkit-appearance: none; /* Safari and Chrome */
-  -moz-appearance: none; /* Firefox */
+  appearance: none;
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
   background-color: #f9f9f9;
   border: 2px solid #ccc;
   border-radius: 6px;
@@ -228,17 +228,17 @@ body {
 }
 
 .site-footer {
-  background-color: #f8f9fa; /* Light gray background */
+  background-color: #f8f9fa;
   padding: 1.5rem 1rem;
   text-align: center;
   font-size: 0.95rem;
-  color: #6c757d; /* Muted text color */
+  color: #6c757d; 
   border-top: 1px solid #dee2e6;
   margin-top: 2rem;
 }
 
 .site-footer a {
-  color: #007bff; /* Bootstrap primary blue */
+  color: #007bff; 
   text-decoration: none;
   font-weight: 500;
 }
