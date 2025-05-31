@@ -1,9 +1,11 @@
 ---
 import "../styles/stylesheet.scss";
+import '../styles/global.css';
 ---
 
 <html lang="en">
   <head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -74,31 +76,32 @@ import "../styles/stylesheet.scss";
       "isAccessibleForFree": true
     }
   </script>
+  <div class="container">
+  <h1>Convert between Balanced Ternary and Decimal</h1>
+  <div class="info-box">
+    <ul class="info-list">
+      <li>
+        Don't know about Balanced Ternary Operator?. Here -
+        <a target="_blank" href="https://en.wikipedia.org/wiki/Balanced_ternary">Balanced ternary</a>
+      </li>
+      <li>
+        To convert a single number, enter it into the input field. 
+      </li>
+      <li>
+        For bulk conversions, specify a range using the format <code>x, y</code> (e.g., <code>1,100</code> or <code>T10,1T11</code>).
+      </li>
+      <li>
+        When entering balanced ternary numbers, remember that the digits -1 and 1 are represented by <code>T</code> and <code>1</code>, respectively.
+      </li>
+    </ul>
+  </div>
 
-  <h1>Convert between balanced ternary and decimal</h1>
-  <p>
-    If you're here, you likely already know what <a
-      target="_blank"
-      href="https://en.wikipedia.org/wiki/Balanced_ternary">Balanced ternary</a
-    > is, so we won't redefine it here.
-  </p>
-
-  <p>
-    To convert a single number, simply enter it into the input field. For bulk
-    conversions, you can specify a range using the format <code>x, y</code> (e.g.,
-    <code>1, 100</code> or <code>T10, 1T11</code>).
-  </p>
-
-  <p>
-    When entering balanced ternary numbers, remember that the digit -1 and 1 is
-    represented by <code>T</code> and <code>1</code>.
-  </p>
 
   <input
     id="numeric-input"
     aria-label="Enter decimal"
     class="numeric-input"
-    placeholder="Enter decimal"
+    placeholder="Enter Decimal"
   />
 
   <label for="numeric-base-select">Convert to</label>
@@ -126,18 +129,21 @@ import "../styles/stylesheet.scss";
   </div>
 
   <script src="../scripts/script.ts"></script>
-  <footer>
-    Consider starring ⭐ us on <a
-      target="_blank"
-      href="https://github.com/VBproDev/decimal-and-balanced-ternary-converter"
-      >Github!</a
-    >
+  <footer class="site-footer">
     <p>
-      Made by <a target="_blank" href="https://github.com/VBproDev"
-        >Viraj Bijpuria</a
+      Consider starring ⭐ us on
+      <a
+        target="_blank"
+        href="https://github.com/VBproDev/decimal-and-balanced-ternary-converter"
+        >GitHub!</a
       >
     </p>
+    <p>
+      Made by
+      <a target="_blank" href="https://github.com/VBproDev">Viraj Bijpuria</a>
+    </p>
   </footer>
+
   <div class="banner-container">
     <h4 id="error-banner" class="disabled-banner"></h4>
   </div>
@@ -145,6 +151,6 @@ import "../styles/stylesheet.scss";
   <div class="banner-container">
     <h4 id="success-banner" class="disabled-banner"></h4>
   </div>
-
+</div>
 
 </html>
