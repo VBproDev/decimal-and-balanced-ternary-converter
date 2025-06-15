@@ -1,0 +1,155 @@
+---
+import "../../styles/stylesheet.scss";
+import '../../styles/global.css';
+---
+
+<html lang="hi">
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="application-name"
+      content="दशमलव से बैलेंस्ड टर्नरी कन्वर्टर"
+    />
+    <meta
+      name="description"
+      content="दशमलव संख्याओं और बैलेंस्ड टर्नरी के बीच रूपांतरण करने वाला एक ऑनलाइन टूल।"
+    />
+    <meta
+      name="keywords"
+      content="बैलेंस्ड टर्नरी, कन्वर्टर, बेस 10, बेस 3, दशमलव, कैलकुलेट, कन्वर्ट"
+    />
+    <meta name="author" content="Viraj Bijpuria" />
+    <meta name="robots" content="index, follow" />
+
+    <meta charset="UTF-8" />
+    <meta
+      name="google-site-verification"
+      content="2nZEIGfRoHGC-BS3L-BIv6bkhVUZDpoGNgUK9Z4Pub8"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="दशमलव से बैलेंस्ड टर्नरी कन्वर्टर" />
+    <meta
+      property="og:description"
+      content="इस मुफ्त ऑनलाइन कैलकुलेटर से दशमलव संख्याओं को बैलेंस्ड टर्नरी में आसानी से बदलें।"
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/VBproDev/decimal-to-balanced-ternary-converter"
+    />
+    <meta
+      property="og:site_name"
+      content="दशमलव से बैलेंस्ड टर्नरी कन्वर्टर"
+    />
+    <meta property="og:image" content="./favicon.png" />
+    <link rel="icon" href="./favicon.png" />
+    <title>दशमलव को बैलेंस्ड टर्नरी में और वापस कन्वर्ट करें</title>
+  </head>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "दशमलव से बैलेंस्ड टर्नरी कन्वर्टर",
+      "url": "https://github.com/VBproDev/decimal-to-balanced-ternary-converter",
+      "applicationCategory": "CalculatorApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript and modern browser",
+      "description": "दशमलव संख्याओं और बैलेंस्ड टर्नरी के बीच रूपांतरण करने वाला एक ऑनलाइन टूल",
+      "keywords": [
+        "बैलेंस्ड टर्नरी",
+        "कन्वर्टर",
+        "बेस 10",
+        "बेस 3",
+        "दशमलव",
+        "गणना करें",
+        "कन्वर्ट करें"
+      ],
+      "creator": {
+        "@type": "Person",
+        "name": "Viraj Bijpuria",
+        "url": "https://github.com/VBproDev"
+      },
+      "inLanguage": "hi",
+      "license": "https://www.gnu.org/licenses/agpl-3.0.en.html",
+      "isAccessibleForFree": true
+    }
+  </script>
+  <div class="container">
+  <h1>बैलेंस्ड टर्नरी और दशमलव के बीच कन्वर्ट करें</h1>
+  <div class="info-box">
+    <ul class="info-list">
+      <li>
+        बैलेंस्ड टर्नरी ऑपरेटर के बारे में नहीं जानते? यहाँ देखें -
+        <a target="_blank" href="https://en.wikipedia.org/wiki/Balanced_ternary">बैलेंस्ड टर्नरी</a>
+      </li>
+      <li>
+        एक संख्या को बदलने के लिए, उसे इनपुट फील्ड में दर्ज करें।
+      </li>
+      <li>
+        बल्क कन्वर्ज़न के लिए, <code>x, y</code> प्रारूप (जैसे <code>1,100</code> या <code>T10,1T11</code>) में एक सीमा निर्दिष्ट करें।
+      </li>
+      <li>
+        बैलेंस्ड टर्नरी संख्याएं दर्ज करते समय ध्यान रखें कि अंकों -1 और 1 को क्रमशः <code>T</code> और <code>1</code> द्वारा दर्शाया जाता है।
+      </li>
+    </ul>
+  </div>
+
+  <input
+    id="numeric-input"
+    aria-label="दशमलव दर्ज करें"
+    class="numeric-input"
+    placeholder="दशमलव दर्ज करें"
+  />
+
+  <label for="numeric-base-select">इसमें कन्वर्ट करें</label>
+  <select id="numeric-base-select" class="numeric-base-select" name="base">
+    <option value="balanced-ternary">बैलेंस्ड टर्नरी</option>
+    <option value="decimal">दशमलव</option>
+  </select>
+
+  <button class="convert-btn">कन्वर्ट करें</button>
+
+  <br />
+
+  <div class="conversion-container">
+    <div class="copy-result">
+      <div class="copy-icon-container">
+        <button class="copy-btn" role="button" aria-label="परिणाम कॉपी करें">
+          📋
+        </button>
+        <button class="download-btn" role="button" aria-label="परिणाम डाउनलोड करें">
+          ⬇️
+        </button>
+      </div>
+    </div>
+    <textarea readonly tabindex="-1" class="conversion-result"></textarea>
+  </div>
+
+  <script src="../../scripts/script.ts"></script>
+  <footer class="site-footer">
+    <p>
+      कृपया हमें ⭐ दें
+      <a
+        target="_blank"
+        href="https://github.com/VBproDev/decimal-and-balanced-ternary-converter"
+        >GitHub पर!</a
+      >
+    </p>
+    <p>
+      द्वारा निर्मित
+      <a target="_blank" href="https://github.com/VBproDev">Viraj Bijpuria</a>
+    </p>
+  </footer>
+
+  <div class="banner-container">
+    <h4 id="error-banner" class="disabled-banner"></h4>
+  </div>
+
+  <div class="banner-container">
+    <h4 id="success-banner" class="disabled-banner"></h4>
+  </div>
+</div>
+
+</html>
