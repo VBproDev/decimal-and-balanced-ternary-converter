@@ -11,6 +11,10 @@ const copyBtn = document.querySelector(".copy-btn")!;
 const successBanner = document.getElementById("success-banner")!;
 const downloadBtn = document.querySelector(".download-btn")!;
 
+if (navigator.language.toLowerCase().startsWith('pt-br')) {
+  window.location.replace('/pt-br');
+}
+
 function setLoadingUI() {
   successBanner.setAttribute("aria-live", "polite");
   successBanner.classList.remove("disabled-banner");

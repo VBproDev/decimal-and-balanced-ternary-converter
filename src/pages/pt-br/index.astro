@@ -1,5 +1,6 @@
 ---
 import "../../styles/stylesheet.scss";
+import '../../styles/global.css';
 ---
 
 <html lang="pt-BR">
@@ -9,7 +10,7 @@ import "../../styles/stylesheet.scss";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="application-name"
-      content="Conversor de Decimal para Ternário Balanceado"
+      content="Conversor Decimal para Ternário Balanceado"
     />
     <meta
       name="description"
@@ -22,15 +23,16 @@ import "../../styles/stylesheet.scss";
     <meta name="author" content="Viraj Bijpuria" />
     <meta name="robots" content="index, follow" />
 
+    <meta charset="UTF-8" />
     <meta
       name="google-site-verification"
       content="2nZEIGfRoHGC-BS3L-BIv6bkhVUZDpoGNgUK9Z4Pub8"
     />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Conversor de Decimal para Ternário Balanceado" />
+    <meta property="og:title" content="Conversor Decimal para Ternário Balanceado" />
     <meta
       property="og:description"
-      content="Converta números decimais para ternário balanceado com esta calculadora online gratuita."
+      content="Converta números decimais para ternário balanceado facilmente com esta calculadora online gratuita."
     />
     <meta
       property="og:url"
@@ -38,7 +40,7 @@ import "../../styles/stylesheet.scss";
     />
     <meta
       property="og:site_name"
-      content="Conversor de Decimal para Ternário Balanceado"
+      content="Conversor Decimal para Ternário Balanceado"
     />
     <meta property="og:image" content="./favicon.png" />
     <link rel="icon" href="./favicon.png" />
@@ -49,10 +51,10 @@ import "../../styles/stylesheet.scss";
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "Conversor de Decimal para Ternário Balanceado",
+      "name": "Conversor Decimal para Ternário Balanceado",
       "url": "https://github.com/VBproDev/decimal-to-balanced-ternary-converter",
       "applicationCategory": "CalculatorApplication",
-      "operatingSystem": "Todos",
+      "operatingSystem": "All",
       "browserRequirements": "Requer JavaScript e navegador moderno",
       "description": "Uma ferramenta online para converter entre números decimais e ternário balanceado",
       "keywords": [
@@ -74,22 +76,23 @@ import "../../styles/stylesheet.scss";
       "isAccessibleForFree": true
     }
   </script>
+
   <div class="container">
     <h1>Converter entre Ternário Balanceado e Decimal</h1>
     <div class="info-box">
       <ul class="info-list">
         <li>
-          Não conhece o operador ternário balanceado? Veja mais em -
-          <a target="_blank" href="https://pt.wikipedia.org/wiki/Ternário_balanceado">Ternário balanceado</a>
+          Não conhece o operador ternário balanceado? Veja aqui -
+          <a target="_blank" href="https://pt.wikipedia.org/wiki/Tern%C3%A1rio_balanceado">Ternário balanceado</a>
         </li>
         <li>
-          Para converter um número único, insira-o no campo de entrada.
+          Para converter um único número, digite no campo de entrada.
         </li>
         <li>
-          Para conversões em lote, especifique um intervalo usando o formato <code>x, y</code> (ex.: <code>1,100</code> ou <code>T10,1T11</code>).
+          Para conversões em massa, especifique um intervalo no formato <code>x, y</code> (ex.: <code>1,100</code> ou <code>T10,1T11</code>).
         </li>
         <li>
-          Ao inserir números em ternário balanceado, lembre-se que os dígitos -1 e 1 são representados por <code>T</code> e <code>1</code>, respectivamente.
+          Ao digitar números em ternário balanceado, lembre-se de que os dígitos -1 e 1 são representados por <code>T</code> e <code>1</code>, respectivamente.
         </li>
       </ul>
     </div>
@@ -98,7 +101,7 @@ import "../../styles/stylesheet.scss";
       id="numeric-input"
       aria-label="Digite um decimal"
       class="numeric-input"
-      placeholder="Digite um decimal"
+      placeholder="Digite um número decimal"
     />
 
     <label for="numeric-base-select">Converter para</label>
@@ -128,7 +131,7 @@ import "../../styles/stylesheet.scss";
     <script src="../../scripts/script.ts"></script>
     <footer class="site-footer">
       <p>
-        Considere dar uma estrela ⭐ para nós no
+        Considere nos dar uma estrela ⭐ no
         <a
           target="_blank"
           href="https://github.com/VBproDev/decimal-and-balanced-ternary-converter"
